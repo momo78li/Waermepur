@@ -115,12 +115,12 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             <div className="relative z-10 w-full max-w-xl animate-float-slow">
               
               <img
-                src="pumpe.png"
+                src="/pumpe.png"
                 alt="Wärme Pur Wärmepumpe"
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
 
-              {/* Box schwebt jetzt mit, weil sie IM Container ist */}
+              {/* Box schwebt jetzt mit */}
               <div className="absolute -bottom-6 -left-4 md:bottom-10 md:-left-12 z-20">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 pr-5 rounded-2xl shadow-2xl flex gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-white rounded-full flex items-center justify-center">
