@@ -1,3 +1,4 @@
+cat << 'EOF' > components/Hero.tsx
 import React from 'react';
 import { ArrowRight, CheckCircle, Star, Zap, Snowflake } from 'lucide-react';
 
@@ -109,10 +110,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           {/* BILD BEREICH */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2 relative flex justify-center">
 
-            {/* Hintergrund-Glow (bleibt starr) */}
+            {/* Hintergrund-Glow */}
             <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-red-600/20 to-transparent rounded-full blur-[90px] -translate-x-1/2 -translate-y-1/2 animate-energy-pulse" />
 
-            {/* Schwebender Container (Alles hier drin bewegt sich mit) */}
+            {/* Schwebender Container */}
             <div className="relative z-10 w-full max-w-xl animate-float-slow">
               
               <img
@@ -121,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
 
-              {/* Polar-Box schwebt jetzt mit */}
+              {/* Polar-Box */}
               <div className="absolute -bottom-6 -left-4 md:bottom-10 md:-left-12 z-20">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 pr-5 rounded-2xl shadow-2xl flex gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-white rounded-full flex items-center justify-center">
@@ -142,3 +143,4 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     </section>
   );
 };
+EOF
