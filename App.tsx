@@ -7,6 +7,7 @@ import { USPSection } from './components/USPSection';
 import { PromoFlyer } from './components/PromoFlyer';
 import { SustainabilitySection } from './components/SustainabilitySection';
 import { LeadCalculator } from './components/LeadCalculator';
+import { LocationMap } from './components/LocationMap';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 
@@ -24,7 +25,7 @@ export default function App() {
         {/* HERO */}
         <Hero onCtaClick={openModal} />
 
-        {/* VIDEO SECTION */}
+        {/* VIDEO */}
         <section className="bg-black py-12 flex justify-center">
           <div className="w-full max-w-5xl px-4">
             <video
@@ -60,6 +61,9 @@ export default function App() {
         <div id="calculator" className="bg-slate-900 py-16">
           <LeadCalculator onRequestClick={openModal} />
         </div>
+
+        {/* LOCATION MAP – ABSCHLUSS */}
+        <LocationMap />
       </main>
 
       <Footer />
