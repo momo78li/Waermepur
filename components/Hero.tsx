@@ -8,7 +8,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
     <section className="relative min-h-[85vh] bg-black flex items-center overflow-hidden pt-10 md:pt-0 border-b border-zinc-900">
-      
+
       {/* Animations */}
       <style>{`
         @keyframes float-slow {
@@ -33,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
           {/* TEXT */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            
+
             <div className="flex items-center gap-4 mb-6">
               <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
                 Neuheit
@@ -108,19 +108,22 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
           {/* VIDEO */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2 relative flex justify-center">
-            
+
             <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-red-600/20 to-transparent rounded-full blur-[90px] -translate-x-1/2 -translate-y-1/2 animate-energy-pulse" />
 
             <div className="relative z-10 w-full max-w-xl animate-float-slow">
               <video
-                src="/waermepumpe.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="auto"
+                poster="/logo.png"
                 className="w-full h-auto rounded-xl bg-black shadow-2xl"
-              />
+              >
+                <source src="/waermepumpe.mp4" type="video/mp4" />
+                Ihr Browser unterstützt dieses Video nicht.
+              </video>
             </div>
 
             <div className="absolute -bottom-6 -left-4 md:bottom-10 md:-left-12 z-20">
@@ -136,7 +139,6 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             </div>
 
           </div>
-
         </div>
       </div>
     </section>
