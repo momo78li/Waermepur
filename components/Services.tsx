@@ -25,7 +25,7 @@ export const Services: React.FC = () => {
         '25 Jahre Erfahrung'
       ],
       icon: <Flame className="w-8 h-8 text-orange-500" />,
-      imageUrl: '/pumpe.png'
+      imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_22_33_1768616606368.png'
     },
     {
       id: 'bath',
