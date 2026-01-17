@@ -19,8 +19,19 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           0%,100% { opacity: .25; transform: translate(-50%,-50%) scale(1); }
           50% { opacity: .55; transform: translate(-50%,-50%) scale(1.1); }
         }
+        @keyframes wander {
+          0% { transform: translate(0, 0); }
+          15% { transform: translate(12px, -8px); }
+          30% { transform: translate(-8px, 5px); }
+          45% { transform: translate(15px, 10px); }
+          60% { transform: translate(-12px, -5px); }
+          75% { transform: translate(8px, 12px); }
+          90% { transform: translate(-5px, -10px); }
+          100% { transform: translate(0, 0); }
+        }
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
         .animate-energy-pulse { animation: energy-pulse 4s ease-in-out infinite; }
+        .animate-wander { animation: wander 8s ease-in-out infinite; }
       `}</style>
 
       {/* Background */}
@@ -121,8 +132,8 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
 
-              {/* Box schwebt jetzt mit */}
-              <div className="absolute -bottom-6 -left-4 md:bottom-10 md:-left-12 z-20">
+              {/* Box schwebt jetzt mit und wandert */}
+              <div className="absolute -bottom-6 -left-4 md:bottom-10 md:-left-12 z-20 animate-wander">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 pr-5 rounded-2xl shadow-2xl flex gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-white rounded-full flex items-center justify-center">
                     <Snowflake className="text-blue-500 w-6 h-6" />
