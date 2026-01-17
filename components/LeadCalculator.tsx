@@ -13,12 +13,18 @@ export const LeadCalculator: React.FC<LeadCalculatorProps> = ({ onRequestClick }
   const [currentSystem, setCurrentSystem] = useState<HeatingType>(HeatingType.GAS);
 
   const calculation = useMemo(() => {
-    // Rough estimation logic for demonstration
-    const consumptionFactor = parseInt(year) < 1995 ? 150 : 80;
+    const consumptionFactor = parseInt(year) < 1995 ? 150 : (parseInt(year) < 2010 ? 100 : 70);
     
-    // Price per kWh (approx average DE)
-    const oldPrice = 0.14; 
-    const newPriceEffective = 0.08; 
+    const pricePerKwh: Record<HeatingType, number> = {
+      [HeatingType.GAS]: 0.12,
+      [HeatingType.OIL]: 0.10,
+      [HeatingType.ELECTRIC]: 0.32,
+    };
+    
+    const oldPrice = pricePerKwh[currentSystem];
+    const heatPumpCOP = 4.0;
+    const electricityPrice = 0.32;
+    const newPriceEffective = electricityPrice / heatPumpCOP;
 
     const annualConsumption = area * consumptionFactor;
     
@@ -26,12 +32,18 @@ export const LeadCalculator: React.FC<LeadCalculatorProps> = ({ onRequestClick }
     const newCost = Math.round(annualConsumption * newPriceEffective);
     const savings = currentCost - newCost;
 
+    const heatingLabels: Record<HeatingType, string> = {
+      [HeatingType.GAS]: 'Gasheizung',
+      [HeatingType.OIL]: 'Ölheizung',
+      [HeatingType.ELECTRIC]: 'Nachtspeicher',
+    };
+
     return {
       currentCost,
       newCost,
       savings,
       data: [
-        { name: 'Ihre Heizung', value: currentCost },
+        { name: heatingLabels[currentSystem], value: currentCost },
         { name: 'Wärmepumpe', value: newCost },
       ]
     };
