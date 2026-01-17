@@ -105,8 +105,8 @@ export const Services: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute inset-0 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ backgroundColor: '#0f172a' }}>
-                  <div className="absolute inset-0 rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col" style={{ backgroundColor: '#0f172a' }}>
+                <div className="absolute inset-0 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)' }}>
+                  <div className="absolute inset-0 rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col border-t-4 border-red-600">
                     <div className="mb-3 md:mb-4 flex-shrink-0">
                       {service.icon}
                     </div>
@@ -115,7 +115,7 @@ export const Services: React.FC = () => {
                     </h3>
                     <ul className="space-y-2 md:space-y-3 overflow-y-auto flex-grow">
                       {service.backContent.map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 md:gap-3 text-slate-300 text-sm md:text-base">
+                        <li key={index} className="flex items-start gap-2 md:gap-3 text-gray-300 text-sm md:text-base">
                           <span className="text-red-500 flex-shrink-0">✓</span>
                           <span>{item}</span>
                         </li>
