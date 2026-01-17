@@ -105,21 +105,23 @@ export const Services: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] p-4 md:p-6 lg:p-8 flex flex-col" style={{ backgroundColor: '#0f172a' }}>
-                  <div className="mb-3 md:mb-4 flex-shrink-0">
-                    {service.icon}
+                <div className="absolute inset-0 rounded-2xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ backgroundColor: '#0f172a' }}>
+                  <div className="absolute inset-0 rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col" style={{ backgroundColor: '#0f172a' }}>
+                    <div className="mb-3 md:mb-4 flex-shrink-0">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex-shrink-0">
+                      {service.title}
+                    </h3>
+                    <ul className="space-y-2 md:space-y-3 overflow-y-auto flex-grow">
+                      {service.backContent.map((item, index) => (
+                        <li key={index} className="flex items-start gap-2 md:gap-3 text-slate-300 text-sm md:text-base">
+                          <span className="text-red-500 flex-shrink-0">✓</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex-shrink-0">
-                    {service.title}
-                  </h3>
-                  <ul className="space-y-2 md:space-y-3 overflow-y-auto flex-grow">
-                    {service.backContent.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 md:gap-3 text-slate-300 text-sm md:text-base">
-                        <span className="text-red-500 flex-shrink-0">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
