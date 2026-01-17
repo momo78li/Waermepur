@@ -29,7 +29,7 @@ export default function App() {
         <Hero onCtaClick={openModal} />
         <TrustSection />
         <section id="services">
-          <Services onServiceClick={openModal} />
+          <Services />
         </section>
         <section id="calculator" className="py-20 bg-slate-900">
           <LeadCalculator onRequestClick={openModal} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -7,87 +7,64 @@ interface ContactModalProps {
 }
 
 export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const [submitted, setSubmitted] = React.useState(false);
-
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 500);
-  };
+  const phoneNumber = '+491732515382';
+  const email = 'Info@wärmepur.com';
+  const whatsappMessage = encodeURIComponent('Hallo, ich interessiere mich für Ihre Leistungen und hätte gerne ein unverbindliches Angebot.');
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={onClose}>
+      <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
         
         <div className="flex justify-between items-center p-6 border-b border-gray-100">
-          <h3 className="text-xl font-bold text-slate-900">
-            {submitted ? 'Vielen Dank!' : 'Kostenloses Angebot anfordern'}
-          </h3>
+          <h3 className="text-xl font-bold text-slate-900">Kontakt aufnehmen</h3>
           <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
             <X size={20} className="text-slate-500" />
           </button>
         </div>
 
         <div className="p-6">
-          {submitted ? (
-            <div className="text-center py-8">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="w-8 h-8 text-green-600" />
+          <p className="text-slate-600 mb-6">
+            Wählen Sie Ihre bevorzugte Kontaktmethode. Wir melden uns schnellstmöglich bei Ihnen!
+          </p>
+          
+          <div className="space-y-4">
+            <a 
+              href={`https://wa.me/${phoneNumber.replace(/\s/g, '').replace('+', '')}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 w-full p-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold transition-all hover:scale-[1.02] shadow-lg shadow-green-500/30"
+            >
+              <MessageCircle size={28} />
+              <div className="text-left">
+                <div className="text-lg">WhatsApp</div>
+                <div className="text-sm font-normal opacity-90">Direkt schreiben</div>
               </div>
-              <h4 className="text-2xl font-bold text-slate-900 mb-2">Anfrage gesendet!</h4>
-              <p className="text-slate-600 mb-6">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-              <button 
-                onClick={onClose}
-                className="bg-slate-900 text-white px-6 py-2 rounded-lg font-semibold"
-              >
-                Zurück zur Website
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <p className="text-slate-600 text-sm mb-4">
-                Füllen Sie das Formular aus. Wir rufen Sie zurück, um einen Termin zu vereinbaren. Unverbindlich & kostenlos.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1">Vorname</label>
-                  <input required type="text" className="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-red-500 outline-none" placeholder="Max" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1">Nachname</label>
-                  <input required type="text" className="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-red-500 outline-none" placeholder="Mustermann" />
-                </div>
-              </div>
+            </a>
 
-              <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1">Telefonnummer (für Rückruf)</label>
-                <input required type="tel" className="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-red-500 outline-none" placeholder="02306 ..." />
+            <a 
+              href={`mailto:${email}?subject=Anfrage über Website&body=Hallo,%0A%0Aich interessiere mich für Ihre Leistungen und hätte gerne ein unverbindliches Angebot.%0A%0AMit freundlichen Grüßen`}
+              className="flex items-center gap-4 w-full p-4 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-bold transition-all hover:scale-[1.02] shadow-lg shadow-slate-800/30"
+            >
+              <Mail size={28} />
+              <div className="text-left">
+                <div className="text-lg">E-Mail senden</div>
+                <div className="text-sm font-normal opacity-90">{email}</div>
               </div>
+            </a>
 
-              <div>
-                 <label className="block text-sm font-semibold text-slate-700 mb-1">Worum geht es?</label>
-                 <select className="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-red-500 outline-none">
-                   <option>Neue Heizung / Wärmepumpe</option>
-                   <option>Badsanierung</option>
-                   <option>Klimaanlage</option>
-                   <option>Reparatur / Wartung</option>
-                   <option>Sonstiges</option>
-                 </select>
+            <a 
+              href={`tel:${phoneNumber}`}
+              className="flex items-center gap-4 w-full p-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-all hover:scale-[1.02] shadow-lg shadow-red-600/30"
+            >
+              <Phone size={28} />
+              <div className="text-left">
+                <div className="text-lg">Anrufen</div>
+                <div className="text-sm font-normal opacity-90">{phoneNumber}</div>
               </div>
-
-              <button 
-                type="submit"
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-lg shadow-red-600/20 transition-all mt-4"
-              >
-                Jetzt Absenden
-              </button>
-            </form>
-          )}
+            </a>
+          </div>
         </div>
       </div>
     </div>
