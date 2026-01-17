@@ -21,12 +21,13 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         }
         @keyframes wander {
           0% { transform: translate(0, 0); }
-          15% { transform: translate(12px, -8px); }
-          30% { transform: translate(-8px, 5px); }
-          45% { transform: translate(15px, 10px); }
-          60% { transform: translate(-12px, -5px); }
-          75% { transform: translate(8px, 12px); }
-          90% { transform: translate(-5px, -10px); }
+          12% { transform: translate(80px, -60px); }
+          25% { transform: translate(150px, -30px); }
+          37% { transform: translate(200px, -80px); }
+          50% { transform: translate(120px, -120px); }
+          62% { transform: translate(60px, -90px); }
+          75% { transform: translate(180px, -50px); }
+          87% { transform: translate(40px, -70px); }
           100% { transform: translate(0, 0); }
         }
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
