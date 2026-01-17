@@ -25,7 +25,7 @@ export const Services: React.FC = () => {
         '25 Jahre Erfahrung'
       ],
       icon: <Flame className="w-6 h-6 md:w-8 md:h-8 text-orange-500" />,
-      imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_22_33_1768616606368.png'
+      imageUrl: '/waermepumpe.png'
     },
     {
       id: 'bath',
@@ -55,7 +55,7 @@ export const Services: React.FC = () => {
         'Regelmäßige Wartung möglich'
       ],
       icon: <Wind className="w-6 h-6 md:w-8 md:h-8 text-cyan-500" />,
-      imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_11_37_1768616674516.png'
+      imageUrl: '/klimaanlage.png'
     }
   ];
 
