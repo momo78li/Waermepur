@@ -79,7 +79,7 @@ export const Services: React.FC = () => {
             >
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
-                <div className="absolute inset-0 bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 [backface-visibility:hidden] flex flex-col">
+                <div className="absolute inset-0 bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 [backface-visibility:hidden] flex flex-col transition-opacity duration-300 group-hover:opacity-0">
                   <div className="h-40 md:h-52 lg:h-64 overflow-hidden relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                     <img 
