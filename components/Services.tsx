@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
         'Wartungsverträge verfügbar',
         '25 Jahre Erfahrung'
       ],
-      icon: <Flame className="w-8 h-8 text-orange-500" />,
+      icon: <Flame className="w-6 h-6 md:w-8 md:h-8 text-orange-500" />,
       imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_22_33_1768616606368.png'
     },
     {
@@ -39,7 +39,7 @@ export const Services: React.FC = () => {
         '3D-Badplanung vorab',
         'Alle Gewerke koordiniert'
       ],
-      icon: <Droplets className="w-8 h-8 text-blue-500" />,
+      icon: <Droplets className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />,
       imageUrl: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -54,68 +54,68 @@ export const Services: React.FC = () => {
         'Schnelle Installation',
         'Regelmäßige Wartung möglich'
       ],
-      icon: <Wind className="w-8 h-8 text-cyan-500" />,
+      icon: <Wind className="w-6 h-6 md:w-8 md:h-8 text-cyan-500" />,
       imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_11_37_1768616674516.png'
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-5xl font-black text-slate-900 mb-4">
             Unsere Lösungen für Ihr Zuhause
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
             Kein Fachchinesisch. Wir lösen Ihr Problem schnell, zuverlässig und nachhaltig.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {services.map((service) => (
             <div 
               key={service.id}
-              className="group h-[480px] [perspective:1000px]"
+              className="group min-h-[420px] md:min-h-[480px] [perspective:1000px]"
             >
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
-                <div className="absolute inset-0 bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 [backface-visibility:hidden]">
-                  <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 [backface-visibility:hidden] flex flex-col">
+                  <div className="h-40 md:h-52 lg:h-64 overflow-hidden relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                     <img 
                       src={service.imageUrl} 
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-4 left-4 z-20 bg-white/95 p-3 rounded-xl shadow-sm">
+                    <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 z-20 bg-white/95 p-2 md:p-3 rounded-xl shadow-sm">
                       {service.icon}
                     </div>
                   </div>
                   
-                  <div className="p-8 flex flex-col h-[216px]">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                  <div className="p-4 md:p-6 lg:p-8 flex flex-col flex-grow">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 md:mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed flex-grow">
+                    <p className="text-sm md:text-base text-slate-600 leading-relaxed flex-grow">
                       {service.description}
                     </p>
-                    <div className="text-red-600 font-bold mt-4">
+                    <div className="text-red-600 font-bold mt-3 md:mt-4 text-sm md:text-base">
                       Hover für mehr Details →
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-slate-900 rounded-2xl overflow-hidden shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 flex flex-col justify-center">
-                  <div className="mb-4">
+                <div className="absolute inset-0 bg-slate-900 rounded-2xl overflow-hidden shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] p-4 md:p-6 lg:p-8 flex flex-col">
+                  <div className="mb-3 md:mb-4 flex-shrink-0">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex-shrink-0">
                     {service.title}
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 md:space-y-3 overflow-y-auto flex-grow">
                     {service.backContent.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3 text-slate-300">
-                        <span className="text-red-500 mt-1">✓</span>
+                      <li key={index} className="flex items-start gap-2 md:gap-3 text-slate-300 text-sm md:text-base">
+                        <span className="text-red-500 flex-shrink-0">✓</span>
                         <span>{item}</span>
                       </li>
                     ))}
