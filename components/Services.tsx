@@ -55,7 +55,7 @@ export const Services: React.FC = () => {
         'Regelmäßige Wartung möglich'
       ],
       icon: <Wind className="w-8 h-8 text-cyan-500" />,
-      imageUrl: 'https://images.unsplash.com/photo-1618222033621-e0c660706213?q=80&w=800&auto=format&fit=crop'
+      imageUrl: '/attached_assets/ChatGPT_Image_17._Jan._2026,_03_11_37_1768616674516.png'
     }
   ];
 
