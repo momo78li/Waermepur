@@ -105,7 +105,7 @@ export const Services: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-slate-900 rounded-2xl overflow-hidden shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] p-4 md:p-6 lg:p-8 flex flex-col">
+                <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] p-4 md:p-6 lg:p-8 flex flex-col" style={{ backgroundColor: '#0f172a' }}>
                   <div className="mb-3 md:mb-4 flex-shrink-0">
                     {service.icon}
                   </div>
