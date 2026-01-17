@@ -61,7 +61,7 @@ export const Impressum: React.FC<ImpressumProps> = ({ isOpen, onClose }) => {
             <div className="text-slate-700 leading-relaxed space-y-1">
               <p>Eintragung im Handelsregister</p>
               <p>Registergericht: Amtsgericht Dortmund</p>
-              <p>Registernummer: HRB [Nummer]</p>
+              <p>Registernummer: HRB 8817</p>
             </div>
           </section>
 
