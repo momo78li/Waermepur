@@ -25,7 +25,7 @@ export const Services: React.FC = () => {
         '25 Jahre Erfahrung'
       ],
       icon: <Flame className="w-8 h-8 text-orange-500" />,
-      imageUrl: 'https://images.unsplash.com/photo-1507646227500-4d389b0012be?q=80&w=800&auto=format&fit=crop'
+      imageUrl: '/pumpe.png'
     },
     {
       id: 'bath',
