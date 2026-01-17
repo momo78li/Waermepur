@@ -6,6 +6,7 @@ import { Services } from './components/Services';
 import { LeadCalculator } from './components/LeadCalculator';
 import { USPSection } from './components/USPSection';
 import { SustainabilitySection } from './components/SustainabilitySection';
+import { Testimonials } from './components/Testimonials';
 import { LocationMap } from './components/LocationMap';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
@@ -31,6 +32,7 @@ export default function App() {
           <LeadCalculator onRequestClick={() => setIsModalOpen(true)} />
         </section>
         <USPSection />
+        <Testimonials />
         <SustainabilitySection />
         <LocationMap />
       </main>

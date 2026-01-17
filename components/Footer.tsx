@@ -80,8 +80,11 @@ export const Footer: React.FC<FooterProps> = ({ onImpressumClick, onDatenschutzC
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6">Karriere</h4>
             <p className="mb-4 text-sm">Wir suchen Verstärkung! Du bist Anlagenmechaniker (m/w/d)?</p>
-            <a href="#" className="inline-block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-white/20">
-              Zu den Stellenangeboten
+            <a 
+              href="mailto:Info@wärmepur.com?subject=Bewerbung als Anlagenmechaniker (m/w/d)&body=Sehr geehrter Herr Iyibak,%0A%0Ahiermit bewerbe ich mich auf die ausgeschriebene Stelle als Anlagenmechaniker.%0A%0AMit freundlichen Grüßen" 
+              className="inline-block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-white/20"
+            >
+              Jetzt bewerben
             </a>
           </div>
         </div>
