@@ -20,85 +20,144 @@ export const Impressum: React.FC<ImpressumProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <div className="p-6 prose prose-slate max-w-none">
-          <h3>Angaben gemäß § 5 TMG</h3>
-          <p>
-            <strong>Wärme Pur GmbH</strong><br />
-            Alte Herrenthey 12-14<br />
-            44536 Lünen<br />
-            Deutschland
-          </p>
+        <div className="p-8 space-y-8">
+          
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Angaben gemäß § 5 TMG
+            </h3>
+            <div className="text-slate-700 leading-relaxed">
+              <p className="font-semibold text-slate-900">Wärme Pur GmbH</p>
+              <p>Alte Herrenthey 12-14</p>
+              <p>44536 Lünen</p>
+              <p>Deutschland</p>
+            </div>
+          </section>
 
-          <h3>Vertreten durch</h3>
-          <p>Geschäftsführer: [Name des Geschäftsführers]</p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Vertreten durch
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Geschäftsführer: Bülent Iyibak
+            </p>
+          </section>
 
-          <h3>Kontakt</h3>
-          <p>
-            Telefon: +49 173 25 15 382<br />
-            E-Mail: Info@wärmepur.com<br />
-            Website: www.wärmepur.com
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Kontakt
+            </h3>
+            <div className="text-slate-700 leading-relaxed space-y-1">
+              <p>Telefon: +49 173 25 15 382</p>
+              <p>E-Mail: Info@wärmepur.com</p>
+              <p>Website: www.wärmepur.com</p>
+            </div>
+          </section>
 
-          <h3>Registereintrag</h3>
-          <p>
-            Eintragung im Handelsregister<br />
-            Registergericht: Amtsgericht Dortmund<br />
-            Registernummer: HRB [Nummer]
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Registereintrag
+            </h3>
+            <div className="text-slate-700 leading-relaxed space-y-1">
+              <p>Eintragung im Handelsregister</p>
+              <p>Registergericht: Amtsgericht Dortmund</p>
+              <p>Registernummer: HRB [Nummer]</p>
+            </div>
+          </section>
 
-          <h3>Umsatzsteuer-ID</h3>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            DE [Nummer]
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Umsatzsteuer-ID
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE [Nummer]
+            </p>
+          </section>
 
-          <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
-          <p>
-            Berufsbezeichnung: Meisterbetrieb für Heizung, Sanitär und Klima<br />
-            Zuständige Kammer: Handwerkskammer Dortmund<br />
-            Verliehen in: Deutschland
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Berufsbezeichnung
+            </h3>
+            <div className="text-slate-700 leading-relaxed space-y-1">
+              <p>Berufsbezeichnung: Meisterbetrieb für Heizung, Sanitär und Klima</p>
+              <p>Zuständige Kammer: Handwerkskammer Dortmund</p>
+              <p>Verliehen in: Deutschland</p>
+            </div>
+          </section>
 
-          <h3>Streitschlichtung</h3>
-          <p>
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">
-              https://ec.europa.eu/consumers/odr/
-            </a>
-          </p>
-          <p>
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
-            Verbraucherschlichtungsstelle teilzunehmen.
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              EU-Streitschlichtung
+            </h3>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+              </p>
+              <p>
+                <a 
+                  href="https://ec.europa.eu/consumers/odr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-red-600 hover:underline break-all"
+                >
+                  https://ec.europa.eu/consumers/odr/
+                </a>
+              </p>
+              <p>
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+                Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+            </div>
+          </section>
 
-          <h3>Haftung für Inhalte</h3>
-          <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach 
-            den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter 
-            jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen 
-            oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-          </p>
-          <p>
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen 
-            Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt 
-            der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden 
-            Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Haftung für Inhalte
+            </h3>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen 
+                Seiten nach den allgemeinen Gesetzen verantwortlich.
+              </p>
+              <p>
+                Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, 
+                übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
+                Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+              </p>
+              <p>
+                Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach 
+                den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung 
+                ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung 
+                möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese 
+                Inhalte umgehend entfernen.
+              </p>
+            </div>
+          </section>
 
-          <h3>Haftung für Links</h3>
-          <p>
-            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss 
-            haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte 
-            der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Haftung für Links
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir 
+              keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine 
+              Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige 
+              Anbieter oder Betreiber der Seiten verantwortlich.
+            </p>
+          </section>
 
-          <h3>Urheberrecht</h3>
-          <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem 
-            deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung 
-            außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen 
-            Autors bzw. Erstellers.
-          </p>
+          <section>
+            <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+              Urheberrecht
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten 
+              unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, 
+              Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes 
+              bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+          </section>
+
         </div>
       </div>
     </div>
