@@ -100,7 +100,7 @@ export const Services: React.FC = () => {
                       {service.description}
                     </p>
                     <div className="text-red-600 font-bold mt-3 md:mt-4 text-sm md:text-base">
-                      Hover für mehr Details →
+                      Mehr erfahren →
                     </div>
                   </div>
                 </div>
