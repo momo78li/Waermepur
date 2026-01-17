@@ -9,39 +9,40 @@ import { SustainabilitySection } from './components/SustainabilitySection';
 import { LocationMap } from './components/LocationMap';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
+import { Impressum } from './components/Impressum';
+import { Datenschutz } from './components/Datenschutz';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const [isImpressumOpen, setIsImpressumOpen] = useState(false);
+  const [isDatenschutzOpen, setIsDatenschutzOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Header onContactClick={openModal} />
+      <Header onContactClick={() => setIsModalOpen(true)} />
       
       <main className="flex-grow">
-        <Hero onCtaClick={openModal} />
+        <Hero onCtaClick={() => setIsModalOpen(true)} />
         <TrustSection />
         <section id="services">
           <Services />
         </section>
         <section id="calculator" className="py-20 bg-slate-900">
-          <LeadCalculator onRequestClick={openModal} />
+          <LeadCalculator onRequestClick={() => setIsModalOpen(true)} />
         </section>
         <USPSection />
         <SustainabilitySection />
         <LocationMap />
       </main>
 
-      <Footer />
+      <Footer 
+        onImpressumClick={() => setIsImpressumOpen(true)} 
+        onDatenschutzClick={() => setIsDatenschutzOpen(true)} 
+      />
       
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Impressum isOpen={isImpressumOpen} onClose={() => setIsImpressumOpen(false)} />
+      <Datenschutz isOpen={isDatenschutzOpen} onClose={() => setIsDatenschutzOpen(false)} />
     </div>
   );
 }

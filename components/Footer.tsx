@@ -1,13 +1,17 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Globe } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onImpressumClick: () => void;
+  onDatenschutzClick: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onImpressumClick, onDatenschutzClick }) => {
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           
-          {/* Brand */}
           <div className="col-span-1 md:col-span-1">
              <div className="font-black text-2xl tracking-tighter text-white uppercase flex items-center mb-4">
                 WÄRME <span className="text-red-600 ml-1">PUR</span>
@@ -21,7 +25,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact */}
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6">Kontakt</h4>
             <ul className="space-y-4">
@@ -50,7 +53,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Hours */}
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6">Öffnungszeiten</h4>
             <ul className="space-y-2 text-sm">
@@ -75,7 +77,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Jobs */}
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6">Karriere</h4>
             <p className="mb-4 text-sm">Wir suchen Verstärkung! Du bist Anlagenmechaniker (m/w/d)?</p>
@@ -88,8 +89,8 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} Wärme Pur GmbH. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Impressum</a>
-            <a href="#" className="hover:text-white">Datenschutz</a>
+            <button onClick={onImpressumClick} className="hover:text-white transition-colors">Impressum</button>
+            <button onClick={onDatenschutzClick} className="hover:text-white transition-colors">Datenschutz</button>
           </div>
         </div>
       </div>
