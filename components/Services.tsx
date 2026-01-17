@@ -75,7 +75,7 @@ export const Services: React.FC = () => {
           {services.map((service) => (
             <div 
               key={service.id}
-              className="group min-h-[420px] md:min-h-[480px] [perspective:1000px]"
+              className="group h-[420px] md:h-[480px] [perspective:1000px]"
             >
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
