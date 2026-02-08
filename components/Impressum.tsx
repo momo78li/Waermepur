@@ -67,10 +67,10 @@ export const Impressum: React.FC<ImpressumProps> = ({ isOpen, onClose }) => {
 
           <section>
             <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-              Umsatzsteuer-ID
+              Steuernummer
             </h3>
             <p className="text-slate-700 leading-relaxed">
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE [Nummer]
+              Steuernummer: 316/5785/1207
             </p>
           </section>
 
